@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint Response</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+        }
+        .header {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .content {
+            margin-top: 20px;
+        }
+        .footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #666;
+        }
+        .logo-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .logo-container img {
+            width: 70px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container" style="text-align: center;">
+            <a href="#">
+                <img style="width: 70px;" id="logo"
+                     src="https://tiptop-stag.syd1.digitaloceanspaces.com/staging/TipTopDriver.png"
+                     width="70" alt="" />
+            </a>
+        </div>
+        <p class="header">Hi {{customerName}},</p>
+        
+        <div class="content">
+            <p>Thank you for bringing your concerns to our attention. We’ve carefully reviewed your complaint regarding your recent booking and want to provide you with an update.</p>
+
+            <p><strong>Booking Details:</strong></p>
+            <p>• <strong>Booking ID:</strong> {{BookingId}}</p>
+            <p>• <strong>Submitted on:</strong> {{submissionDate}}</p>
+            <p>• <strong>Issue:</strong> {{issueDescription}}</p>
+
+            <p>• <strong>Resolution</strong></p>
+            <p>We’ve investigated the issue and have taken the following steps to address it:</p>
+            <p>  {{  description}}</p>
+        </div>
+        
+        <div class="footer">
+            <p>We appreciate your patience while we worked to resolve this matter. If you have any further questions or need additional assistance, please don’t hesitate to reach out.</p>
+            <p>Thanks and regards,</p>
+            <p>TipTop Ride</p>
+        </div>
+    </div>
+</body>
+</html>

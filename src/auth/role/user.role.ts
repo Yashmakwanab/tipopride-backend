@@ -1,0 +1,32 @@
+export enum UsersType {
+  Customer = "customer",
+  Driver = 'driver',
+  admin = 'admin',
+  Staff = 'staff'
+}
+
+export enum StaffRoles {
+  dispatcher = 'dispatcher',
+  STAFF = "STAFF",
+  DASHBOARD = "DASHBOARD",
+  CUSTOMERS = "CUSTOMERS",
+  DRIVERS = "DRIVERS",
+  DRIVERSREQUESTED = "DRIVERSREQUESTED",
+  DOCSUPDATED = "DOCSUPDATED",
+  BOOKINGS = "BOOKINGS",
+  VEHICLES = "VEHICLES",
+  SURCHARGE = "SURCHARGE",
+  EARNINGS = "EARNINGS",
+  COUPONS = "COUPONS",
+  COMPLAINTS = "COMPLAINTS",
+  COMPANY = "COMPANY",
+  SETTINGS = "SETTINGS",
+  CONTENT = "CONTENT",
+  FAQ = "FAQ",
+  TAX = "TAX",
+  CONTACT = "CONTACT",
+  NOTIFICATION = "NOTIFICATION",
+  PAYOUT = "PAYOUT",
+  DRIVERSPAYOUT = "DRIVERSPAYOUT",
+ 
+}

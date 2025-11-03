@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Weekly Earnings Summary</title>
+</head>
+<body>
+  <p>Hi {{driverName}},</p>
+
+  <p>We hope you had a great week on the road! Here’s a summary of your earnings for the week of {{startDate}} to {{endDate}}:</p>
+
+  <h2>Weekly Summary:</h2>
+  <p>Total Earnings: ₹{{totalEarnings}}</p>
+  <p>Trips Completed: {{numberOfTrips}}</p>
+
+  <h3>Earnings Breakdown:</h3>
+  <p>Ride Fares: ₹{{rideFares}}</p>
+  <p>Tips: ₹{{tips}}</p>
+  <p>Toll Charges: ₹{{tollCharges}}</p>
+
+  <h3>Deductions:</h3>
+  <p>TipTop Cabby’s Commission: ₹{{commission}}</p>
+
+  <h2>Net Payout:</h2>
+  <p>Payment Received in Cash for Trips: ₹{{cashEarnings}}</p>
+  <p>Amount to be Deposited: ₹{{netPayout}}</p>
+  <p>Deposit Date: {{depositDate}}</p>
+  <p>Bank Account: {{bankAccountNumber}}</p>
+
+  <p>Check the Trips section in your mobile app for a detailed breakdown of each trip.</p>
+
+  <p>If you have any questions or need assistance, our support team is here to help. Please feel free to contact us through the app.</p>
+
+  <p>Thank you for driving with TipTop Cabby!</p>
+
+  <p>Best regards,</p>
+  <p>The TipTop Cabby Team</p>
+</body>
+</html>

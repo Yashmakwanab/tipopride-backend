@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apology for Incorrect Complaint Response</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #0056b3;
+        }
+        .content {
+            margin-top: 20px;
+        }
+        .footer {
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+       <div class="logo-container" style="text-align: center;">
+            <a href="#">
+                <img style="width: 70px;" id="logo"
+                     src="https://tiptop-stag.syd1.digitaloceanspaces.com/staging/TipTopDriver.png"
+                     width="70" alt="" />
+            </a>
+        </div>
+    
+
+        <p>Dear {{customer_name}},</p>
+
+        <div class="content">
+            <p>I hope you're doing well. I’m writing to apologize for the incorrect response you received earlier, which was intended for another customer.</p>
+
+            <p>We’ve now received your actual complaint and are reviewing it. Here’s a message from our team:</p>
+
+  <p>Message from Admin:  {{admin_message}}</p>
+            {{!-- <blockquote>
+                Message from Admin:<br>
+                "{{admin_message}}"
+            </blockquote> --}}
+
+            <p>You’ll hear back from us shortly with a proper response.</p>
+
+            <p>Thank you for your understanding, and we apologize for any confusion.</p>
+
+            <p>Best regards,<br>
+           TipTop Cabby</p>
+        </div>
+
+        <div class="footer">
+            <p>This is an automated message; please do not reply to this email. If you have any questions, contact our support team.</p>
+        </div>
+    </div>
+</body>
+</html>
