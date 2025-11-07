@@ -1149,7 +1149,7 @@ export class BookingService {
                     _id: { $nin: excludedDriverIds },
                 };
 
-                const data: any = await this.model.drivers.find(query, {}, options);
+                const data: any = await this.model.drivers.find(query, {});
 
                 //console.log('data', data)
                 for (const driver of data) {
@@ -3154,7 +3154,7 @@ export class BookingService {
             const booking_data = await this.model.booking.findOne({
                 _id: new Types.ObjectId(id),
             })
-                .select("-sender_country_code -receiver_name -receiver_country_code -receiver_number -parcel_details -pickup_lat -pickup_long -drop_lat -drop_long -stops -is_stop1_charge_noti_send -is_stop2_charge_noti_send -rate_by_customer -rate_by_driver") // Exclude the unwanted fields
+                .select("-sender_country_code -receiver_name -receiver_country_code -receiver_number -parcel_details -pickup_lat -pickup_long -drop_lat -drop_long -stops -is_stop1_charge_noti_send -is_stop2_charge_noti_send -rate_by_customer -rate_by_driver -cancelled_reason -cancelled_by -accept_ride_at -updated_at") // Exclude the unwanted fields
                 .populate([
                     { path: "customer_id", select: "name email country_code phone image" },
                     { path: "company_id", select: "name email country_code phone" },
@@ -10472,8 +10472,8 @@ Trip price: $${booking.amount_for_driver}`,
                                     _id: -1
                                 }
                             },
-                            { $skip: options.skip },
-                            { $limit: options.limit },
+                            // { $skip: options.skip },
+                            // { $limit: options.limit },
                         ]
                     }
                 },
