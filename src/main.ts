@@ -31,7 +31,7 @@ async function bootstrap() {
     .addServer(`http://localhost:${process.env.PORT}`, 'local server')
     .addServer(`http://192.168.0.249:${process.env.PORT}`, 'local server')
     .addServer("https://staging.tiptopmaxisydney.com.au:3003", 'optimization server')
-    .addServer(`https://staging.tiptopmaxisydney.com.au:3001`, "staging server")
+    .addServer(`http://staging.api.nexus1.tiptopride.com.au`, "staging server")
     .addServer(`https://dev.tiptopmaxisydney.com.au:3002`, "dev server")
     .addServer(`https://bookings.tiptopride.com.au:3000`, "live server")
     .setVersion('1.0')
