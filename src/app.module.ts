@@ -35,6 +35,7 @@ import { ConfigurationModule } from './configuration/configuration.module';
 import { CompanyModule } from './company/company.module';
 import { NotificationModule } from './notification/notification.module';
 import { ActivityModule } from './activity/activity.module';
+import { IpAddressModule } from './ip-address/ip-address.module';
 
 @Module({
   imports: [
@@ -76,7 +77,7 @@ import { ActivityModule } from './activity/activity.module';
     CompanyModule,
     NotificationModule,
     ActivityModule,
-
+    IpAddressModule,
   ],
   controllers: [AppController],
   providers: [AppService, CronjobService,

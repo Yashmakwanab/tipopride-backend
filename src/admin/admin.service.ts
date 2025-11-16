@@ -33,6 +33,20 @@ export class AdminService {
 
   async login(signInDto: SignInDto) {
     try {
+      const validIP = await this.model.ipaddress.findOne({
+        address: signInDto.ipAddress,
+      });
+
+      if (!validIP) {
+        throw new HttpException(
+          {
+            error_code: 'INVALID_CREDENTIALS',
+            error_description: 'Unauthorized IP address'
+          },
+          HttpStatus.UNAUTHORIZED,
+        );
+      }
+
       const fetch_admin = await this.model.admin.findOne({
         email: String(signInDto.email).toLowerCase(),
       }).lean(true);
@@ -1296,8 +1310,8 @@ export class AdminService {
           }
         }
       )
-    
-      return update ;
+
+      return update;
     } catch (error) {
       console.log('error', error);
       throw error;
