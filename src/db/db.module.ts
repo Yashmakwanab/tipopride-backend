@@ -54,6 +54,7 @@ import { SurchargeHistory, SurchargeHistoryModel } from 'src/surcharge/schema/su
 import { Company, CompanyModel } from 'src/company/schema/company.schema';
 import { DriverPayoutHistory, DriverPayoutHistoryModel } from 'src/driver/schema/driver-payout-history.schema';
 import { Notification, NotificationModel } from 'src/notification/schema/notification.schema';
+import { IpAddress, IpAddressModel } from 'src/ip-address/schemas/ip-address.schema';
 
 config();
 @Global()
@@ -97,6 +98,7 @@ config();
       { name: Tax.name, schema: TaxModel },
       { name: SurchargeHistory.name, schema: SurchargeHistoryModel },
       { name: Company.name, schema: CompanyModel },
+      { name: IpAddress.name, schema: IpAddressModel },
       { name: DriverPayoutHistory.name, schema: DriverPayoutHistoryModel },
       { name: Notification.name, schema: NotificationModel },
 

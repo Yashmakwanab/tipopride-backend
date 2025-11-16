@@ -12,6 +12,9 @@ export class SignInDto {
 
   @ApiProperty()
   fcm_token: string
+
+  @ApiProperty()
+  ipAddress: string;
 }
 
 export enum notification_to {

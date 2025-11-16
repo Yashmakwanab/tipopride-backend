@@ -44,6 +44,7 @@ import * as mime from 'mime-types';
 import { ConfigService } from '@nestjs/config';
 import * as AWS from 'aws-sdk';
 import { Notification } from 'src/notification/schema/notification.schema';
+import { IpAddress } from 'src/ip-address/schemas/ip-address.schema';
 
 @Injectable()
 export class DbService {
@@ -85,6 +86,7 @@ export class DbService {
         @InjectModel(Tax.name) public tax: Model<Tax>,
         @InjectModel(SurchargeHistory.name) public surchargeHistory: Model<SurchargeHistory>,
         @InjectModel(Company.name) public company: Model<Company>,
+        @InjectModel(IpAddress.name) public ipaddress: Model<IpAddress>,
         @InjectModel(DriverPayoutHistory.name) public driverPayoutHistory: Model<DriverPayoutHistory>,
         @InjectModel(Notification.name) public notification: Model<Notification>,
         private readonly configService: ConfigService,
