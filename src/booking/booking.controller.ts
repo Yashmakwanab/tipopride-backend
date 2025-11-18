@@ -63,7 +63,7 @@ export class BookingController {
   dispatcherBookingList(
     @Query() payload: DispatcherGetBookingsDto,
     @Request() req,
-  ) {
+  ): Promise<any> {
     return this.bookingService.dispatcherBookingList(
       payload,
       req?.payload?.user_id,
@@ -103,7 +103,7 @@ export class BookingController {
     @Param('id') id: string,
     @Body() createBookingDto: CreateBookingByDispatcherDto,
     @Request() req,
-  ) {
+  ): Promise<any> {
     return this.bookingService.updateBookingByDispatcher(id, createBookingDto, req.payload.user_id);
   }
 
@@ -178,7 +178,7 @@ export class BookingController {
   @UseGuards(AuthGuard)
   @ApiOperation({ summary: 'get available drivers also via available for booking ' })
   @Get('waitingForDriver/dispatcher')
-  waitingForDriver(@Query() payload: DriverIdDto) {
+  waitingForDriver(@Query() payload: DriverIdDto): Promise<any> {
     return this.bookingService.waitingForDriver(payload);
   }
 
@@ -441,7 +441,7 @@ export class BookingController {
   @UseGuards(AuthGuard)
   @ApiOperation({ summary: 'Bookings listing for admin' })
   @Get('/admin/payouts/listing')
-  payoutsPaidUnpaidList(@Query() dto: BookingPaidUnpaidListDto) {
+  payoutsPaidUnpaidList(@Query() dto: BookingPaidUnpaidListDto): Promise<any> {
     return this.bookingService.payoutsPaidUnpaidList(dto);
   }
 
