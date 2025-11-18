@@ -594,7 +594,7 @@ export class ChatService {
         receiver: null
       }, {
         receiver: dispatcher_id
-      }, { returnDocument: "after" })
+      })
       // .populate([{ path: 'driver_id' }, { path: 'customer_id' }, { path: 'dispatcher_id', select: '-password' }])
     } catch (error) {
       console.log(error);
