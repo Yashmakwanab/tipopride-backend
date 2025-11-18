@@ -58,7 +58,7 @@ export class ContactusService {
         }
       }
       let options = await this.commonService.set_options(+body.page, +body.limit);
-      const data = await this.model.contactus.find(query, {}, options);
+      const data = await this.model.contactus.find(query, null, options);
       const count = await this.model.contactus.countDocuments(query);
 
       return { count, data };
