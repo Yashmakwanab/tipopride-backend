@@ -154,7 +154,7 @@ export class NotificationService {
         }
     }
 
-    async getNotification(payload: notifyPagination, user_id?: string) {
+    async getNotification(payload: notifyPagination, user_id?: string): Promise<any> {
         let options = await this.common.set_options(payload.pagination, payload.limit)
         let options1 = await this.common.set_options(payload.unread_pagination, payload.unread_limit)
         let query = { send_to: new Types.ObjectId(user_id), is_deleted: false }

@@ -375,7 +375,7 @@ export class BookingService {
         booking_id: string,
         body: CreateBookingByDispatcherDto,
         user_id: string
-    ) {
+    ): Promise<any> {
         try {
             let create = await this.update_schedule_bookingByDispatcher(booking_id,
                 body,
@@ -797,7 +797,7 @@ export class BookingService {
     //     }
     // }
 
-    async update_schedule_bookingByDispatcher(booking_id: string, body: ScheduleBookingDto, company_id: string, dispatcher_id?: string) {
+    async update_schedule_bookingByDispatcher(booking_id: string, body: ScheduleBookingDto, company_id: string, dispatcher_id?: string): Promise<any> {
         try {
             let additional_fee = 0;
             let pending_booking_amount = 0;
@@ -919,7 +919,7 @@ export class BookingService {
                 customer_detail = await this.model.customers.updateOne(
                     { _id: customer._id },
                     { customer_id: stripe_customer_id.id },
-                    { new: true }
+                    { returnDocument: "after" }
                 );
             }
 
@@ -1376,7 +1376,7 @@ export class BookingService {
         }
     }
 
-    async waitingForDriver(payload: DriverIdDto) {
+    async waitingForDriver(payload: DriverIdDto): Promise<any> {
         try {
             const query = {
                 booking_status: { $in: [BookingStatus.Request, null] },
@@ -5127,7 +5127,7 @@ export class BookingService {
         additional_fee,
         dispatcher_id?,
         otp?
-    ) {
+    ): Promise<any> {
         try {
             // let booking_id = await this.createBookingId();
             let stops = body.stops || [];
@@ -7485,7 +7485,7 @@ Trip price: $${booking.amount_for_driver}`,
     async dispatcherBookingList(
         payload: DispatcherGetBookingsDto,
         dispatcher_id: string
-    ) {
+    ): Promise<any> {
         try {
             const query = {
                 dispatcher_id: new Types.ObjectId(dispatcher_id),
@@ -10543,7 +10543,7 @@ Trip price: $${booking.amount_for_driver}`,
         }
     }
 
-    async payoutsPaidUnpaidList(dto: BookingPaidUnpaidListDto) {
+    async payoutsPaidUnpaidList(dto: BookingPaidUnpaidListDto): Promise<any> {
         try {
             const {
                 status = PayToDriver.Paid, // Default to Paid if not provided

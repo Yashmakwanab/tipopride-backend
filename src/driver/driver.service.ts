@@ -627,7 +627,7 @@ export class DriverService {
         { doc_expiry_type: null },
         { new: true }
       );
-      await this.model.drivers.updateOne({ _id: new mongosse.Types.ObjectId(body.id) }, query, { new: true });
+      await this.model.drivers.updateOne({ _id: new mongosse.Types.ObjectId(body.id) }, query, { returnDocument: "after" });
       return { message: 'Driver request updated.', data: updatedDriver };
     } catch (error) {
       console.log('error', error);
