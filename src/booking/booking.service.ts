@@ -917,8 +917,8 @@ export class BookingService {
                     email: customer.email,
                 });
                 customer_detail = await this.model.customers.findOneAndUpdate(
-                    filter,
-                    data,
+                    { _id: customer._id },
+                    { customer_id: stripe_customer_id.id },
                     { returnDocument: "after" }
                 );
             }
