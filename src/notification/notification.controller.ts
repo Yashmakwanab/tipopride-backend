@@ -13,7 +13,7 @@ export class NotificationController {
   @ApiOperation({ summary: 'get notification' })
   @ApiConsumes('application/json', 'application/x-www-form-urlencoded')
   @Get()
-  async notification(@Query() payload: notifyPagination, @Request() req) {
+  async notification(@Query() payload: notifyPagination, @Request() req): Promise<any> {
     return this.notificationService.getNotification(payload, req.payload.user_id)
   }
 
