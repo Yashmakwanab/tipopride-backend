@@ -37,15 +37,15 @@ export class AdminService {
         address: signInDto.ipAddress,
       });
 
-      // if (!validIP) {
-      //   throw new HttpException(
-      //     {
-      //       error_code: 'INVALID_CREDENTIALS',
-      //       error_description: 'Unauthorized IP address'
-      //     },
-      //     HttpStatus.UNAUTHORIZED,
-      //   );
-      // }
+      if (!validIP) {
+        throw new HttpException(
+          {
+            error_code: 'INVALID_CREDENTIALS',
+            error_description: 'Unauthorized IP address'
+          },
+          HttpStatus.UNAUTHORIZED,
+        );
+      }
 
       const fetch_admin = await this.model.admin.findOne({
         email: String(signInDto.email).toLowerCase(),
